@@ -1,9 +1,14 @@
 class Person < ApplicationRecord
 
-    has_many :rides, class_name: "Ride", foreign_key: :driver_id
-    has_many :travelers, through: :rides, dependent: :destroy
+    has_many :flights, foreign_key: :traveler_id
 
-    has_many :rides, class_name: "Ride", foreign_key: :traveler_id
-    has_many :drivers, through: :rides, dependent: :destroy
+    has_many :trips, foreign_key: :driver_id, class_name: "Ride"
+    has_many :rides, foreign_key: :traveler_id, class_name: "Ride"
+
+    has_many :travelers, through: :trips, source: :traveler, dependent: :destroy
+    has_many :drivers, through: :rides, source: :driver, dependent: :destroy
+
+    has_many :shuttles, through: :rides
+    
 
 end
