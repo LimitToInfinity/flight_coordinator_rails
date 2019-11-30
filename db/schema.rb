@@ -10,30 +10,52 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_22_224903) do
+ActiveRecord::Schema.define(version: 2019_11_30_190942) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "movements", force: :cascade do |t|
-    t.string "movement_type"
+  create_table "flights", force: :cascade do |t|
+    t.string "direction"
     t.datetime "datetime"
     t.string "airport"
     t.string "airline"
-    t.string "flight_number"
-    t.bigint "driver_id"
+    t.string "number"
     t.bigint "traveler_id"
-    t.index ["driver_id", "traveler_id"], name: "index_movements_on_driver_id_and_traveler_id", unique: true
-    t.index ["driver_id"], name: "index_movements_on_driver_id"
-    t.index ["traveler_id", "driver_id"], name: "index_movements_on_traveler_id_and_driver_id", unique: true
-    t.index ["traveler_id"], name: "index_movements_on_traveler_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["traveler_id"], name: "index_flights_on_traveler_id"
   end
 
   create_table "people", force: :cascade do |t|
     t.string "name"
     t.string "image"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "movements", "people", column: "driver_id"
-  add_foreign_key "movements", "people", column: "traveler_id"
+  create_table "rides", force: :cascade do |t|
+    t.bigint "driver_id"
+    t.bigint "traveler_id"
+    t.bigint "flight_id"
+    t.bigint "shuttle_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["driver_id", "traveler_id"], name: "index_rides_on_driver_id_and_traveler_id", unique: true
+    t.index ["driver_id"], name: "index_rides_on_driver_id"
+    t.index ["flight_id"], name: "index_rides_on_flight_id"
+    t.index ["shuttle_id"], name: "index_rides_on_shuttle_id"
+    t.index ["traveler_id", "driver_id"], name: "index_rides_on_traveler_id_and_driver_id", unique: true
+    t.index ["traveler_id"], name: "index_rides_on_traveler_id"
+  end
+
+  create_table "shuttles", force: :cascade do |t|
+    t.datetime "datetime"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "flights", "people", column: "traveler_id"
+  add_foreign_key "rides", "people", column: "driver_id"
+  add_foreign_key "rides", "people", column: "traveler_id"
 end
