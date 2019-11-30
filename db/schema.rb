@@ -19,9 +19,13 @@ ActiveRecord::Schema.define(version: 2019_10_22_224903) do
     t.string "movement_type"
     t.datetime "datetime"
     t.string "airport"
+    t.string "airline"
+    t.string "flight_number"
     t.bigint "driver_id"
     t.bigint "traveler_id"
+    t.index ["driver_id", "traveler_id"], name: "index_movements_on_driver_id_and_traveler_id", unique: true
     t.index ["driver_id"], name: "index_movements_on_driver_id"
+    t.index ["traveler_id", "driver_id"], name: "index_movements_on_traveler_id_and_driver_id", unique: true
     t.index ["traveler_id"], name: "index_movements_on_traveler_id"
   end
 
