@@ -110,7 +110,29 @@ flight1 = Flight.create({
     traveler_id: ahmed.id,
 })
 
+flight2 = Flight.create({
+    direction: "arrival",
+    datetime: DateTime.now,
+    airport: "bush",
+    airline: "United",
+    number: "917",
+    traveler_id: amr.id,
+})
+
+flight3 = Flight.create({
+    direction: "arrival",
+    datetime: DateTime.now,
+    airport: "bush",
+    airline: "American",
+    number: "238",
+    traveler_id: suzanne.id,
+})
+
 shuttle1 = Shuttle.create({
+    datetime: DateTime.now,
+})
+
+shuttle2 = Shuttle.create({
     datetime: DateTime.now,
 })
 
@@ -119,4 +141,18 @@ ride1 = Ride.create({
     traveler_id: ahmed.id,
     flight: flight1,
     shuttle: shuttle1,
+})
+
+ride2 = Ride.create({
+    driver_id: isis.id,
+    traveler_id: amr.id,
+    flight: flight2,
+    shuttle: shuttle1,
+})
+
+ride3 = Ride.create({
+    driver_id: waleed.id,
+    traveler_id: suzanne.id,
+    flight: flight3,
+    shuttle: shuttle2,
 })
