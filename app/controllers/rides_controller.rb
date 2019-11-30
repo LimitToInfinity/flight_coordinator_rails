@@ -1,0 +1,47 @@
+class RidesController < ApplicationController
+
+    before_action :find_ride, only: [:show, :update, :destroy]
+
+    def index
+        @rides = Ride.all
+        render json: @rides
+    end
+
+    def show
+        render json: @ride
+    end
+
+    def create
+        @ride = Ride.new(ride_params)
+
+        if @ride.valid?
+            @ride.save
+            render json: @ride, status: :created
+        else
+            render json: @ride.errors, status: :unprocessable_entity
+        end
+    end
+
+    def update
+        if @ride.update(ride_params)
+            render json: @ride
+        else
+            render json: @ride.errors, status: :unprocessable_entity
+        end
+    end
+
+    def destroy
+        @ride.destroy
+    end
+
+    private
+
+    def find_ride
+        @ride = Ride.find(params[:id])
+    end
+
+    def ride_params
+        params.require(:ride).permit(:driver_id, :traveler_id, :flight_id, :shuttle_id)
+    end
+
+end
