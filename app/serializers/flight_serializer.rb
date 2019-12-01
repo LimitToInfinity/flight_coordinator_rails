@@ -5,8 +5,10 @@ class FlightSerializer
     :airline, :number, :traveler_id, :traveler
   
   attribute :ride do |flight|
-    Ride.find_by(flight: flight) ?
-      { driver: Ride.find_by(flight: flight).driver } :
+    ride = Ride.find_by(flight: flight)
+    
+    ride ?
+      { id: ride.id, driver: ride.driver } :
       nil
   end
 end
