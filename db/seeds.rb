@@ -68,7 +68,7 @@ lilah = Person.create({
 
 yousef = Person.create({
     name: "Yousef", 
-    image: "https://pbs.twimg.com/media/CyzN7AJVEAAGTvO?format=jpg&name=4096x4096",
+    image: "https://s3.amazonaws.com/media90.canarymission.org/profile_gallery/Yousef_Gaber_1_203x172_qy3H6g.jpg",
 })
 
 nadia = Person.create({
