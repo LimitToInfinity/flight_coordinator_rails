@@ -128,6 +128,24 @@ flight3 = Flight.create({
     traveler_id: suzanne.id,
 })
 
+flight4 = Flight.create({
+    direction: "departure",
+    datetime: DateTime.now,
+    airport: "bush",
+    airline: "Delta",
+    number: "2189",
+    traveler_id: yassin.id,
+})
+
+flight5 = Flight.create({
+    direction: "departure",
+    datetime: DateTime.now,
+    airport: "hobby",
+    airline: "Southwest",
+    number: "10098",
+    traveler_id: lilah.id,
+})
+
 shuttle1 = Shuttle.create({
     datetime: DateTime.now,
 })
