@@ -4,11 +4,11 @@ class PeopleController < ApplicationController
 
     def index
         @people = Person.all
-        render json: @people
+        render json: PersonSerializer.new(@people)
     end
 
     def show
-        render json: @person
+        render json: PersonSerializer.new(@person)
     end
 
     def create
@@ -16,7 +16,7 @@ class PeopleController < ApplicationController
 
         if @person.valid?
             @person.save
-            render json: @person, status: :created
+            render json: PersonSerializer.new(@person), status: :created
         else
             render json: @person.errors, status: :unprocessable_entity
         end
@@ -24,7 +24,7 @@ class PeopleController < ApplicationController
 
     def update
         if @person.update(person_params)
-            render json: @person
+            render json: PersonSerializer.new(@person)
         else
             render json: @person.errors, status: :unprocessable_entity
         end

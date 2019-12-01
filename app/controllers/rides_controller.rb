@@ -4,11 +4,11 @@ class RidesController < ApplicationController
 
     def index
         @rides = Ride.all
-        render json: @rides
+        render json: RideSerializer.new(@rides)
     end
 
     def show
-        render json: @ride
+        render json: RideSerializer.new(@ride)
     end
 
     def create
@@ -16,7 +16,7 @@ class RidesController < ApplicationController
 
         if @ride.valid?
             @ride.save
-            render json: @ride, status: :created
+            render json: RideSerializer.new(@ride), status: :created
         else
             render json: @ride.errors, status: :unprocessable_entity
         end
@@ -24,7 +24,7 @@ class RidesController < ApplicationController
 
     def update
         if @ride.update(ride_params)
-            render json: @ride
+            render json: RideSerializer.new(@ride)
         else
             render json: @ride.errors, status: :unprocessable_entity
         end

@@ -4,11 +4,11 @@ class ShuttlesController < ApplicationController
 
     def index
         @shuttles = Shuttle.all
-        render json: @shuttles
+        render json: ShuttleSerializer.new(@shuttles)
     end
 
     def show
-        render json: @shuttle
+        render json: ShuttleSerializer.new(@shuttle)
     end
 
     def create
@@ -16,7 +16,7 @@ class ShuttlesController < ApplicationController
 
         if @shuttle.valid?
             @shuttle.save
-            render json: @shuttle, status: :created
+            render json: ShuttleSerializer.new(@shuttle), status: :created
         else
             render json: @shuttle.errors, status: :unprocessable_entity
         end
@@ -24,7 +24,7 @@ class ShuttlesController < ApplicationController
 
     def update
         if @shuttle.update(shuttle_params)
-            render json: @shuttle
+            render json: ShuttleSerializer.new(@shuttle)
         else
             render json: @shuttle.errors, status: :unprocessable_entity
         end

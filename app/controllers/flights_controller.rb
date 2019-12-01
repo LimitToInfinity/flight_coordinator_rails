@@ -4,11 +4,11 @@ class FlightsController < ApplicationController
 
     def index
         @flights = Flight.all
-        render json: @flights
+        render json: FlightSerializer.new(@flights)
     end
 
     def show
-        render json: @flight
+        render json: FlightSerializer.new(@flight)
     end
 
     def create
@@ -16,7 +16,7 @@ class FlightsController < ApplicationController
 
         if @flight.valid?
             @flight.save
-            render json: @flight, status: :created
+            render json: FlightSerializer.new(@flight), status: :created
         else
             render json: @flight.errors, status: :unprocessable_entity
         end
@@ -24,7 +24,7 @@ class FlightsController < ApplicationController
 
     def update
         if @flight.update(flight_params)
-            render json: @flight
+            render json: FlightSerializer.new(@flight)
         else
             render json: @flight.errors, status: :unprocessable_entity
         end
