@@ -5,4 +5,6 @@ class Ride < ApplicationRecord
     belongs_to :flight
     belongs_to :shuttle
 
+    accepts_nested_attributes_for :shuttle
+
 end

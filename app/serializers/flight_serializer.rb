@@ -8,7 +8,7 @@ class FlightSerializer
     ride = Ride.find_by(flight: flight)
     
     ride ?
-      { id: ride.id, driver: ride.driver } :
+      { id: ride.id, driver: ride.driver, shuttle: ride.shuttle } :
       nil
   end
 end

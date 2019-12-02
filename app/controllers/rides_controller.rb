@@ -41,7 +41,9 @@ class RidesController < ApplicationController
     end
 
     def ride_params
-        params.require(:ride).permit(:driver_id, :traveler_id, :flight_id, :shuttle_id)
+        params.require(:ride).permit(:driver_id, :traveler_id, :flight_id,
+            shuttle_attributes: [:datetime]
+        )
     end
 
 end
