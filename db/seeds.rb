@@ -104,7 +104,7 @@ amr = Person.create({
 flight1 = Flight.create({
     direction: "arrival",
     datetime: DateTime.now,
-    airport: "hobby",
+    airport: "Hobby",
     airline: "frontier",
     number: "653",
     traveler_id: ahmed.id,
@@ -113,7 +113,7 @@ flight1 = Flight.create({
 flight2 = Flight.create({
     direction: "arrival",
     datetime: DateTime.now,
-    airport: "bush",
+    airport: "Bush",
     airline: "United",
     number: "917",
     traveler_id: amr.id,
@@ -122,7 +122,7 @@ flight2 = Flight.create({
 flight3 = Flight.create({
     direction: "arrival",
     datetime: DateTime.now,
-    airport: "bush",
+    airport: "Bush",
     airline: "American",
     number: "238",
     traveler_id: suzanne.id,
@@ -131,7 +131,7 @@ flight3 = Flight.create({
 flight4 = Flight.create({
     direction: "departure",
     datetime: DateTime.now,
-    airport: "bush",
+    airport: "Bush",
     airline: "Delta",
     number: "2189",
     traveler_id: yassin.id,
@@ -140,7 +140,7 @@ flight4 = Flight.create({
 flight5 = Flight.create({
     direction: "departure",
     datetime: DateTime.now,
-    airport: "hobby",
+    airport: "Hobby",
     airline: "Southwest",
     number: "10098",
     traveler_id: lilah.id,
