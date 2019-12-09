@@ -41,11 +41,11 @@ ActiveRecord::Schema.define(version: 2019_11_30_190942) do
     t.bigint "shuttle_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["driver_id", "traveler_id"], name: "index_rides_on_driver_id_and_traveler_id", unique: true
+    t.index ["driver_id", "traveler_id"], name: "index_rides_on_driver_id_and_traveler_id"
     t.index ["driver_id"], name: "index_rides_on_driver_id"
     t.index ["flight_id"], name: "index_rides_on_flight_id"
     t.index ["shuttle_id"], name: "index_rides_on_shuttle_id"
-    t.index ["traveler_id", "driver_id"], name: "index_rides_on_traveler_id_and_driver_id", unique: true
+    t.index ["traveler_id", "driver_id"], name: "index_rides_on_traveler_id_and_driver_id"
     t.index ["traveler_id"], name: "index_rides_on_traveler_id"
   end
 
