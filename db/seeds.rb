@@ -101,76 +101,76 @@ amr = Person.create({
     image: "https://avatars3.githubusercontent.com/u/11901499?s=460&v=4",
 })
 
-flight1 = Flight.create({
-    direction: "arrival",
-    datetime: DateTime.now,
-    airport: "Hobby",
-    airline: "frontier",
-    number: "653",
-    traveler_id: ahmed.id,
-})
+# flight1 = Flight.create({
+#     direction: "arrival",
+#     datetime: DateTime.now,
+#     airport: "Hobby",
+#     airline: "frontier",
+#     number: "653",
+#     traveler_id: ahmed.id,
+# })
 
-flight2 = Flight.create({
-    direction: "arrival",
-    datetime: DateTime.now,
-    airport: "Bush",
-    airline: "United",
-    number: "917",
-    traveler_id: amr.id,
-})
+# flight2 = Flight.create({
+#     direction: "arrival",
+#     datetime: DateTime.now,
+#     airport: "Bush",
+#     airline: "United",
+#     number: "917",
+#     traveler_id: amr.id,
+# })
 
-flight3 = Flight.create({
-    direction: "arrival",
-    datetime: DateTime.now,
-    airport: "Bush",
-    airline: "American",
-    number: "238",
-    traveler_id: suzanne.id,
-})
+# flight3 = Flight.create({
+#     direction: "arrival",
+#     datetime: DateTime.now,
+#     airport: "Bush",
+#     airline: "American",
+#     number: "238",
+#     traveler_id: suzanne.id,
+# })
 
-flight4 = Flight.create({
-    direction: "departure",
-    datetime: DateTime.now,
-    airport: "Bush",
-    airline: "Delta",
-    number: "2189",
-    traveler_id: yassin.id,
-})
+# flight4 = Flight.create({
+#     direction: "departure",
+#     datetime: DateTime.now,
+#     airport: "Bush",
+#     airline: "Delta",
+#     number: "2189",
+#     traveler_id: yassin.id,
+# })
 
-flight5 = Flight.create({
-    direction: "departure",
-    datetime: DateTime.now,
-    airport: "Hobby",
-    airline: "Southwest",
-    number: "10098",
-    traveler_id: lilah.id,
-})
+# flight5 = Flight.create({
+#     direction: "departure",
+#     datetime: DateTime.now,
+#     airport: "Hobby",
+#     airline: "Southwest",
+#     number: "10098",
+#     traveler_id: lilah.id,
+# })
 
-shuttle1 = Shuttle.create({
-    datetime: DateTime.now,
-})
+# shuttle1 = Shuttle.create({
+#     datetime: DateTime.now,
+# })
 
-shuttle2 = Shuttle.create({
-    datetime: DateTime.now,
-})
+# shuttle2 = Shuttle.create({
+#     datetime: DateTime.now,
+# })
 
-ride1 = Ride.create({
-    driver_id: isis.id,
-    traveler_id: ahmed.id,
-    flight: flight1,
-    shuttle: shuttle1,
-})
+# ride1 = Ride.create({
+#     driver_id: isis.id,
+#     traveler_id: ahmed.id,
+#     flight: flight1,
+#     shuttle: shuttle1,
+# })
 
-ride2 = Ride.create({
-    driver_id: isis.id,
-    traveler_id: amr.id,
-    flight: flight2,
-    shuttle: shuttle1,
-})
+# ride2 = Ride.create({
+#     driver_id: isis.id,
+#     traveler_id: amr.id,
+#     flight: flight2,
+#     shuttle: shuttle1,
+# })
 
-ride3 = Ride.create({
-    driver_id: waleed.id,
-    traveler_id: suzanne.id,
-    flight: flight3,
-    shuttle: shuttle2,
-})
+# ride3 = Ride.create({
+#     driver_id: waleed.id,
+#     traveler_id: suzanne.id,
+#     flight: flight3,
+#     shuttle: shuttle2,
+# })
