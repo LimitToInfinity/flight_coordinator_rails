@@ -13,8 +13,8 @@ class PeopleController < ApplicationController
 
             @user = User.find(decoded_token[0]["user_id"])
 
-        @people = Person.all
-        render json: PersonSerializer.new(@people)
+            @people = Person.all
+            render json: PersonSerializer.new(@people)
         end
     end
 
