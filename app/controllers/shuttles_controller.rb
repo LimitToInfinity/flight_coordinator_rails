@@ -1,5 +1,6 @@
 class ShuttlesController < ApplicationController
 
+    before_action :authenticate
     before_action :find_shuttle, only: [:show, :update, :destroy]
 
     def index

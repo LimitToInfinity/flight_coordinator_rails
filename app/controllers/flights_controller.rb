@@ -1,5 +1,6 @@
 class FlightsController < ApplicationController
 
+    before_action :authenticate
     before_action :find_flight, only: [:show, :update, :destroy]
 
     def index

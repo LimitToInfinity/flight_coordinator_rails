@@ -1,5 +1,6 @@
 class RidesController < ApplicationController
 
+    before_action :authenticate
     before_action :find_ride, only: [:show, :update, :destroy]
 
     def index
