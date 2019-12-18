@@ -4,6 +4,12 @@ class AuthenticationController < ApplicationController
         @user = User.find_by(username: params[:username])
 
         puts params[:username]
+        puts 1
+        puts 2
+        puts 3
+        puts 4
+        puts 5
+        puts @user
 
         if (!@user)
             render status: :unauthorized
