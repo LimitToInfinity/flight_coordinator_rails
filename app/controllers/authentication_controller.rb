@@ -11,6 +11,7 @@ class AuthenticationController < ApplicationController
                 token = JWT.encode({
                     user_id: @user.id,
                     username: @user.username,
+                    exp: Time.now.to_i + 60,
                 }, secret_key)
 
                 render json: { token: token }
