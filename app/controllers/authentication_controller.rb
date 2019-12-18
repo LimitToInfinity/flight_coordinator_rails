@@ -3,6 +3,8 @@ class AuthenticationController < ApplicationController
     def login
         @user = User.find_by(username: params[:username])
 
+        puts params[:username]
+
         if (!@user)
             render status: :unauthorized
         else
