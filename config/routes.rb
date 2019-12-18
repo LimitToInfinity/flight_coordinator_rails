@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   resources :rides
   resources :shuttles
   
-  # resources :users, only: [:create]
+  resources :users, only: [:create]
   post "login", to: "authentication#login"
 end
