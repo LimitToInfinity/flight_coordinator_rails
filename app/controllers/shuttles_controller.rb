@@ -42,7 +42,7 @@ class ShuttlesController < ApplicationController
     end
 
     def shuttle_params
-        params.require(:shuttle).permit(:datetime)
+        params.require(:shuttle).permit(:datetime, :datetime_string)
     end
 
 end
