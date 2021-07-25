@@ -1,48 +1,45 @@
 class PeopleController < ApplicationController
+  before_action :find_person, only: %i[show update destroy]
 
-    before_action :authenticate
-    before_action :find_person, only: [:show, :update, :destroy]
+  def index
+    @people = Person.all
+    render json: PersonSerializer.new(@people)
+  end
 
-    def index
-        @people = Person.all
-        render json: PersonSerializer.new(@people)
+  def show
+    render json: PersonSerializer.new(@person)
+  end
+
+  def create
+    @person = Person.new person_params
+
+    if @person.valid?
+      @person.save
+      render json: PersonSerializer.new(@person), status: :created
+    else
+      render json: @person.errors, status: :unprocessable_entity
     end
+  end
 
-    def show
-        render json: PersonSerializer.new(@person)
+  def update
+    if @person.update person_params
+      render json: PersonSerializer.new(@person)
+    else
+      render json: @person.errors, status: :unprocessable_entity
     end
+  end
 
-    def create
-        @person = Person.new(person_params)
+  def destroy
+    @person.destroy
+  end
 
-        if @person.valid?
-            @person.save
-            render json: PersonSerializer.new(@person), status: :created
-        else
-            render json: @person.errors, status: :unprocessable_entity
-        end
-    end
+  private
 
-    def update
-        if @person.update(person_params)
-            render json: PersonSerializer.new(@person)
-        else
-            render json: @person.errors, status: :unprocessable_entity
-        end
-    end
+  def find_person
+    @person = Person.find params[:id]
+  end
 
-    def destroy
-        @person.destroy
-    end
-
-    private
-
-    def find_person
-        @person = Person.find(params[:id])
-    end
-
-    def person_params
-        params.require(:person).permit(:name, :image)
-    end
-    
+  def person_params
+    params.require(:person).permit :name, :image
+  end
 end
