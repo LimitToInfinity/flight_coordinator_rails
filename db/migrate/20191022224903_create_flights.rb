@@ -11,6 +11,6 @@ class CreateFlights < ActiveRecord::Migration[6.0]
       t.timestamps
     end
 
-    add_foreign_key :flights, :people, column: "traveler_id", primary_key: "id"
+    add_foreign_key :flights, :people, column: 'traveler_id', primary_key: 'id'
   end
 end
