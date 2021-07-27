@@ -44,7 +44,7 @@ class RidesController < ApplicationController
       :driver_id,
       :traveler_id,
       :flight_id,
-      shuttle_attributes: [:datetime]
+      shuttle_attributes: %i[datetime datetime_string]
     )
   end
 end
