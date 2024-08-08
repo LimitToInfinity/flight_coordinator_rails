@@ -43,3 +43,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'fast_jsonapi', '~> 1.5'
 
 gem "jwt", "~> 2.2"
+
+# for build on back4app with Dockerfile
+gem 'sprockets-rails', '>= 2.0.0'
