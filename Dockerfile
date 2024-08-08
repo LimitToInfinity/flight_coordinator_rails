@@ -23,6 +23,13 @@ RUN bundle install --without development test
 # Copy the rest of the application code
 COPY . /app
 
+# Add the entrypoint script and make it executable
+ADD db/entrypoint.sh /db/entrypoint.sh
+RUN chmod +x /db/entrypoint.sh
+
+# Set the entrypoint
+ENTRYPOINT ["/db/entrypoint.sh"]
+
 # Set environment variables
 ENV SECRET_KEY_BASE=ENV['SECRET_KEY_BASE']
 
