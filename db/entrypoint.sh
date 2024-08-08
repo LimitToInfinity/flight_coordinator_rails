@@ -20,11 +20,12 @@ echo "Database is ready"
 
 # Run database migrations
 echo "Running database migrations..."
-rails db:migrate
+bundle exec rails db:migrate
 
 # Seed the database if needed
 echo "Seeding database..."
-rails db:seed
+bundle exec rails db:seed
 
-# Start the main process
-exec "$@"
+# Start the Rails server
+echo "Starting Rails server..."
+exec rails server -b 0.0.0.0
