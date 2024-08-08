@@ -7,10 +7,10 @@ waitingCount=0
 echo "Waiting for PostgreSQL #$waitingCount..."
 while ! pg_isready -h "$DATABASE_HOST" -p "$DATABASE_PORT" -U "$DATABASE_USER"; do
   sleep 1
-  counter=$((counter + 1))
+  waitingCount=$((waitingCount + 1))
 
   # Check if the counter has reached the maximum wait time
-  if [ "$counter" -ge "$waitingCount" ]; then
+  if [ $waitingCount -ge 30 ]; then
     echo "Timeout: PostgreSQL did not become available after $waitingCount seconds."
     exit 1
   fi
