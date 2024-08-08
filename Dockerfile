@@ -23,6 +23,9 @@ RUN bundle install --without development test
 # Copy the rest of the application code
 COPY . /app
 
+# Set environment variables
+ENV SECRET_KEY_BASE=ENV['SECRET_KEY_BASE']
+
 # Precompile assets
 RUN bundle exec rake assets:precompile
 
