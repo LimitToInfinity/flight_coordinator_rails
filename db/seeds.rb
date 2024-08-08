@@ -1,3 +1,5 @@
+### PEOPLE start ###
+
 steve = Person.create(
   name: 'Steve',
   image: 'https://static.wikia.nocookie.net/marvelhigh/images/b/bd/SteveRogers.jpg'
@@ -20,7 +22,7 @@ tony = Person.create(
 
 carol = Person.create(
   name: 'Carol',
-  image: 'https://am21.mediaite.com/tms/cnt/uploads/2019/05/avengers-endgame-brie-larson-captain-marvel-women-team-up-girl-power-1200x675.jpg'
+  image: 'https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/square/400/Carol-Danvers.Captain-Marvel.webp'
 )
 
 shuri = Person.create(
@@ -45,7 +47,7 @@ hope = Person.create(
 
 scott = Person.create(
   name: 'Scott',
-  image: 'https://lrmonline.com/wp-content/uploads/2018/07/Ant-Man_promo_2.jpg?mrf-size=m'
+  image: 'https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/square/400/Scott-Lang-Ant-Man.Ant-Man.webp'
 )
 
 gamora = Person.create(
@@ -95,5 +97,172 @@ tchalla = Person.create(
 
 diana = Person.create(
   name: 'Diana',
-  image: 'https://www.dccomics.com/sites/default/files/field/image/WW84Style_blog_5fffc5bab091f5.53432043.jpg'
+  image: 'https://static.dc.com/dc/files/default_images/WW84Style_blog_5fffc5bab091f5.53432043.jpg'
 )
+
+### PEOPLE end ###
+
+
+### USERS start ###
+
+user_guest = User.create(
+  username: 'guest',
+  password_digest: '$2a$12$TL42P1XMUfxnp2bS03Sh4OiexpZArtoQ4T2tkMybMFkepsKlnlO0G'
+)
+
+### USERS end ###
+
+
+### FLIGHTS start ###
+
+flight1 = Flight.create(
+  direction: 'arrival',
+  datetime: '2024-08-01 18:00:00',
+  airport: 'Bush',
+  airline: '(IAH)	Frontier',
+  number: 4672,
+  traveler: carol,
+  datetime_string: '2024-08-01T12:00:00-06:00'
+)
+
+flight2 = Flight.create(
+  direction: 'arrival',
+  datetime: '2024-07-28 05:37:00',
+  airport: 'Bush',
+  airline: '(IAH)	United',
+  number: 7843,
+  traveler: natalia,
+  datetime_string: '2024-07-27T23:37:00-06:00'
+)
+
+flight3 = Flight.create(
+  direction: 'departure',
+  datetime: '2024-08-01 22:23:00',
+  airport: 'Hobby',
+  airline: '(HOU)	Frontier',
+  number: 8893,
+  traveler: natalia,
+  datetime_string: '2024-08-01T16:23:00-06:00'
+)
+
+flight4 = Flight.create(
+  direction: 'arrival',
+  datetime: '2024-07-28 05:38:00',
+  airport: 'Bush',
+  airline: '(IAH)	JetBlue',
+  number: 3098,
+  traveler: steve,
+  datetime_string: '2024-07-27T23:38:00-06:00'
+)
+
+flight5 = Flight.create(
+  direction: 'departure',
+  datetime: '2024-08-01 22:22:21',
+  airport: 'Bush',
+  airline: '(IAH)	Delta',
+  number: 5781,
+  traveler: steve,
+  datetime_string: '2024-08-01T16:22:21-06:00'
+)
+
+flight6 = Flight.create(
+  direction: 'departure',
+  datetime: '2024-08-02 17:00:54',
+  airport: 'Hobby',
+  airline: '(HOU)	Spirit',
+  number: 5468,
+  traveler: steve,
+  datetime_string: '2024-08-02T10:00:54-07:00'
+)
+
+flight7 = Flight.create(
+  direction: 'arrival',
+  datetime: '2024-07-29 21:10:13',
+  airport: 'Hobby',
+  airline: '(HOU)	American',
+  number: 8874,
+  traveler: okoye,
+  datetime_string: '2024-07-29T14:10:13-07:00'
+)
+
+### FLIGHTS end ###
+
+
+### SHUTTLES start ###
+
+shuttle1 = Shuttle.create(
+  datetime: '2024-07-28 05:37:00',
+  datetime_string: '2024-07-27T23:37:00-06:00'
+)
+shuttle2 = Shuttle.create(
+  datetime: '2024-08-01 18:00:00',
+  datetime_string: '2024-08-01T12:00:00-06:00'
+)
+shuttle3 = Shuttle.create(
+  datetime: '2024-08-01 22:22:21',
+  datetime_string: '2024-08-01T16:22:21-06:00'
+)
+shuttle4 = Shuttle.create(
+  datetime: '2024-08-01 22:23:00',
+  datetime_string: '2024-08-01T16:23:00-06:00'
+)
+shuttle5 = Shuttle.create(
+  datetime: '2024-08-01 22:23:00',
+  datetime_string: '2024-08-01T16:23:00-06:00'
+)
+shuttle6 = Shuttle.create(
+  datetime: '2024-07-28 06:40:00',
+  datetime_string: '2024-07-27T23:40:00-07:00'
+)
+shuttle7 = Shuttle.create(
+  datetime: '2024-07-28 05:38:00',
+  datetime_string: '2024-07-27T23:38:00-06:00'
+)
+shuttle8 = Shuttle.create(
+  datetime: '2024-07-28 05:37:00',
+  datetime_string: '2024-07-27T23:37:00-06:00'
+)
+shuttle9 = Shuttle.create(
+  datetime: '2024-07-28 05:37:00',
+  datetime_string: '2024-07-27T23:37:00-06:00'
+)
+shuttle10 = Shuttle.create(
+  datetime: '2024-08-01 22:23:00',
+  datetime_string: '2024-08-01T16:23:00-06:00'
+)
+shuttle11 = Shuttle.create(
+  datetime: '2024-07-29 21:10:13',
+  datetime_string: '2024-07-29T14:10:13-07:00'
+)
+shuttle12 = Shuttle.create(
+  datetime: '2024-07-28 05:38:00',
+  datetime_string: '2024-07-27T23:38:00-06:00'
+)
+shuttle13 = Shuttle.create(
+  datetime: '2024-08-01 18:00:00',
+  datetime_string: '2024-08-01T12:00:00-06:00'
+)
+shuttle14 = Shuttle.create(
+  datetime: '2024-07-28 05:37:00',
+  datetime_string: '2024-07-27T23:37:00-06:00'
+)
+
+### SHUTTLES end ###
+
+
+### RIDES start ###
+
+ride1 = Ride.create(
+  driver: barry,
+  traveler: carol,
+  flight: flight1,
+  shuttle: shuttle13
+)
+ride2 = Ride.create(
+  driver: steve,
+  traveler: groot,
+  flight: flight5,
+  shuttle: shuttle3
+)
+
+### RIDES end ###
